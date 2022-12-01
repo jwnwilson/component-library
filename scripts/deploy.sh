@@ -11,6 +11,12 @@ VERSION_DATA=`aws codeartifact list-package-versions --package ${REPO} --domain 
 LATEST_VERSION=`echo $VERSION_DATA | jq -r ".defaultDisplayVersion"`
 THIS_VERSION=`node -p "require('./package.json').version"`
 
+PUBLISH_EMAIL="jwnwilson@hotmail.co.uk"
+PUBLISH_NAME="CircleCI Job"
+
+git config user.email "$PUBLISH_EMAIL"
+git config user.name "$PUBLISH_NAME"
+
 if [ "$LATEST_VERSION" != "$THIS_VERSION" ]; then
     echo "New version detected publishing library"
     npm publish
