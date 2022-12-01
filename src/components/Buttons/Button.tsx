@@ -1,19 +1,11 @@
 import React from 'react';
-import {default as MButton} from '@mui/material/Button';
+import {default as MButton, ButtonProps as MButtonProps} from '@mui/material/Button';
 
-export interface ButtonProps {
-  /**
-   * Material UI options
-   */
-   color?: string;
+export interface ButtonProps extends MButtonProps {
   /**
    * Button contents
    */
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
 }
 
 /**

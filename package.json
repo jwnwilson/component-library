@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "echo 'not implemented'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "publish-storybook": "npx chromatic --project-token=db09bd3149df",
-    "chromatic": "npx chromatic --project-token=db09bd3149df"
+    "chromatic ": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
