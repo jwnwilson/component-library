@@ -25,5 +25,5 @@ else
     THIS_VERSION=`node -p "require('./package.json').version"`
     echo "Preparing for new release: $THIS_VERSION"
     echo $THIS_VERSION > VERSION
-    source ./commit.sh
+    source $(dirname "$0")/commit.sh
 fi
