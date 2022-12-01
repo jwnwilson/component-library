@@ -57,9 +57,11 @@ jobs:
       - run: # Install the AWS CLI if it is not already included in the docker image
           name: Install awscli
           command: |
+            cd ..
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
-            sudo ./aws/install     
+            sudo ./aws/install
+            cd repo
       - run: chmod -R +x scripts/ 
       - run: yarn deploy
 
