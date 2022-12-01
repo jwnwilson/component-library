@@ -5,7 +5,7 @@ jobs:
   install:
     executor:
       name: node/default
-      tag: '14.16'
+      tag: '16.16.0'
 
     working_directory: ~/repo
     steps:
@@ -30,7 +30,7 @@ jobs:
   test:
     executor:
       name: node/default
-      tag: '14.16'
+      tag: '16.16.0'
     working_directory: ~/repo
     steps:
       - attach_workspace:
@@ -47,7 +47,7 @@ jobs:
   deploy:
     executor:
       name: node/default
-      tag: '14.16'
+      tag: '16.16.0'
 
     working_directory: ~/repo
     steps:
@@ -74,7 +74,7 @@ workflows:
             branches:
               ignore: main
       - test:
-          name: test-functional
+          name: test
           requires:
             - install
 
@@ -86,7 +86,7 @@ workflows:
             branches:
               only: main
       - test:
-          name: test-functional
+          name: test
           requires:
             - install
           filters:
@@ -95,7 +95,7 @@ workflows:
       - deploy:
           name: build-and-release
           requires:
-            - test-functional
+            - test
           filters:
             branches:
               only: main
