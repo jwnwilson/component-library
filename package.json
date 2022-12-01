@@ -1,6 +1,6 @@
 {
   "name": "component-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -41,6 +41,5 @@
     "babel-loader": "^8.3.0",
     "chromatic": "^6.11.4"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "component-library@0.1.0"
+  "readme": "ERROR: No README data found!"
 }
