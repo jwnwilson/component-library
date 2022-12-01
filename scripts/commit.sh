@@ -5,6 +5,8 @@ set -x
 
 THIS_VERSION=`node -p "require('./package.json').version"`
 
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 git checkout main
 
 git add .
