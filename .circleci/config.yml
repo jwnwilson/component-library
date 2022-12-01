@@ -65,7 +65,7 @@ jobs:
       - run: chmod -R +x scripts/ 
       - add_ssh_keys:
           fingerprints:
-            - "38:2d:5b:cd:72:c2:24:e2:b2:39:54:5f:a7:a5:8a:4d"
+            - "1d:ee:ff:37:af:6e:e3:33:08:59:0f:51:8d:24:1e:e7"
       - run: yarn deploy
 
 workflows:
