@@ -61,8 +61,8 @@ jobs:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
-      # - run: npm set registry https://qualio-500388420334.d.codeartifact.eu-west-1.amazonaws.com/npm/qualio-shared/
-      # - run: aws codeartifact login --tool npm --repository qualio-shared --domain qualio --region eu-west-1
+      - run: npm set registry https://component-library-675468650888.d.codeartifact.eu-west-1.amazonaws.com/npm/component-library/
+      - run: aws codeartifact login --tool npm --repository component-library --domain component-library --domain-owner 675468650888 --region eu-west-1
       - run: npm publish
 
 workflows:
@@ -94,6 +94,8 @@ workflows:
               only: main
       - deploy:
           name: build-and-release
+          context:
+            - AWS
           requires:
             - test
           filters:
