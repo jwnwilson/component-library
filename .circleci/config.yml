@@ -63,6 +63,9 @@ jobs:
             sudo ./aws/install
             cd repo
       - run: chmod -R +x scripts/ 
+      - add_ssh_keys:
+          fingerprints:
+            - "f0:6c:92:4f:e9:45:1a:ac:6a:a6:64:11:fd:48:d9:5b"
       - run: yarn deploy
 
 workflows:
