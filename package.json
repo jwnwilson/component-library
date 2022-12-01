@@ -1,7 +1,6 @@
 {
   "name": "component-library",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +10,8 @@
     "test": "echo 'not implemented'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic ": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}"
+    "chromatic ": "npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}",
+    "deploy": "./scripts/code-artifact-npm.sh && ./scripts/deploy.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",

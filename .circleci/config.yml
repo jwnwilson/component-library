@@ -57,13 +57,10 @@ jobs:
       - run: # Install the AWS CLI if it is not already included in the docker image
           name: Install awscli
           command: |
-            sudo apt update
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
-            sudo ./aws/install
-      - run: npm set registry https://component-library-675468650888.d.codeartifact.eu-west-1.amazonaws.com/npm/component-library/
-      - run: aws codeartifact login --tool npm --repository component-library --domain component-library --domain-owner 675468650888 --region eu-west-1
-      - run: npm publish
+            sudo ./aws/install      
+      - run: yarn deploy
 
 workflows:
   pull-request:
@@ -93,7 +90,7 @@ workflows:
             branches:
               only: main
       - deploy:
-          name: build-and-release
+          name: deploy
           context:
             - AWS
           requires:
