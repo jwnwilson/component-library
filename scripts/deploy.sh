@@ -1,4 +1,8 @@
 #! /bin/bash
+
+set -e
+set -x
+
 DOMAIN="component-library"
 REPO="component-library"
 AWS_ACCOUNT="675468650888"

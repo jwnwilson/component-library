@@ -1,4 +1,8 @@
 #! /bin/bash
+
+set -e
+set -x
+
 PUBLISH_EMAIL="jwnwilson@hotmail.co.uk"
 PUBLISH_NAME="CircleCI Job"
 THIS_VERSION=`node -p "require('./package.json').version"`
