@@ -16,7 +16,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: CODEARTIFACT_AUTH_TOKEN="" yarn install --immutable
+          command: yarn install --immutable
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -88,6 +88,8 @@ workflows:
           filters:
             branches:
               only: main
+          environment:
+            CODEARTIFACT_AUTH_TOKEN: ""
       - test:
           name: test
           requires:
@@ -95,6 +97,8 @@ workflows:
           filters:
             branches:
               only: main
+          environment:
+            CODEARTIFACT_AUTH_TOKEN: ""
       - deploy:
           name: deploy
           context:
@@ -104,3 +108,5 @@ workflows:
           filters:
             branches:
               only: main
+          environment:
+            CODEARTIFACT_AUTH_TOKEN: ""
