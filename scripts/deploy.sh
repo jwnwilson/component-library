@@ -20,6 +20,7 @@ git config user.name "$PUBLISH_NAME"
 
 if [ "$LATEST_VERSION" != "$THIS_VERSION" ]; then
     echo "New version detected publishing library"
+    aws codeartifact login --tool npm --repository ${REPO} --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --region eu-west-1
     npm publish --registry=${CODEARTIFACT_REPOSITORY_URL}
 else
     npm version patch
