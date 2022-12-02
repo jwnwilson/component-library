@@ -10,6 +10,7 @@ AWS_ACCOUNT="675468650888"
 VERSION_DATA=`aws codeartifact list-package-versions --package ${REPO} --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --repository ${REPO} --format npm --output json`
 LATEST_VERSION=`echo $VERSION_DATA | jq -r ".defaultDisplayVersion"`
 THIS_VERSION=`node -p "require('./package.json').version"`
+CODEARTIFACT_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --repository ${REPO} --format npm --query repositoryEndpoint --output text`
 
 PUBLISH_EMAIL="jwnwilson@hotmail.co.uk"
 PUBLISH_NAME="CircleCI Job"
@@ -19,7 +20,7 @@ git config user.name "$PUBLISH_NAME"
 
 if [ "$LATEST_VERSION" != "$THIS_VERSION" ]; then
     echo "New version detected publishing library"
-    npm publish
+    npm publish --registry=${CODEARTIFACT_REPOSITORY_URL}
 else
     npm version patch
     THIS_VERSION=`node -p "require('./package.json').version"`
