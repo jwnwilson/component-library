@@ -16,5 +16,5 @@ export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domai
 # This specifies the user who accesses the repo
 export CODEARTIFACT_USER=aws
 
-# Now use all of these when configuring the repo
+# Don't use this command if possible, it will hardcode the token in ~/.npmrc
 # aws codeartifact login --tool npm --repository ${REPO} --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --region eu-west-1
