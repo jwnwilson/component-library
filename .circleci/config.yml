@@ -16,9 +16,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: |
-            ./scripts/code-artifact-npm.sh
-            yarn install --immutable
+          command: CODEARTIFACT_AUTH_TOKEN="" yarn install --immutable
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
