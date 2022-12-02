@@ -7,7 +7,7 @@ DOMAIN="component-library"
 REPO="component-library"
 AWS_ACCOUNT="675468650888"
 
-VERSION_DATA=`aws codeartifact list-package-versions --package ${REPO} --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --repository ${REPO} --format npm --output json`
+VERSION_DATA=`aws codeartifact list-package-versions --package ${REPO} --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --repository ${REPO} --format npm --output json --namespace jwnwilson`
 LATEST_VERSION=`echo $VERSION_DATA | jq -r ".defaultDisplayVersion"`
 THIS_VERSION=`node -p "require('./package.json').version"`
 CODEARTIFACT_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain ${DOMAIN} --domain-owner ${AWS_ACCOUNT} --repository ${REPO} --format npm --query repositoryEndpoint --output text`
