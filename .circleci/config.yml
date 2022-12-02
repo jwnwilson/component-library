@@ -6,7 +6,8 @@ jobs:
     executor:
       name: node/default
       tag: '16.16.0'
-
+    environment:
+      CODEARTIFACT_AUTH_TOKEN: ""
     working_directory: ~/repo
     steps:
       - checkout
@@ -31,6 +32,8 @@ jobs:
     executor:
       name: node/default
       tag: '16.16.0'
+    environment:
+      CODEARTIFACT_AUTH_TOKEN: ""
     working_directory: ~/repo
     steps:
       - attach_workspace:
@@ -48,7 +51,8 @@ jobs:
     executor:
       name: node/default
       tag: '16.16.0'
-
+    environment:
+      CODEARTIFACT_AUTH_TOKEN: ""
     working_directory: ~/repo
     steps:
       - attach_workspace:
@@ -88,8 +92,6 @@ workflows:
           filters:
             branches:
               only: main
-          environment:
-            CODEARTIFACT_AUTH_TOKEN: ""
       - test:
           name: test
           requires:
@@ -97,8 +99,6 @@ workflows:
           filters:
             branches:
               only: main
-          environment:
-            CODEARTIFACT_AUTH_TOKEN: ""
       - deploy:
           name: deploy
           context:
@@ -108,5 +108,3 @@ workflows:
           filters:
             branches:
               only: main
-          environment:
-            CODEARTIFACT_AUTH_TOKEN: ""
