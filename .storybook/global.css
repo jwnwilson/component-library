@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+}
