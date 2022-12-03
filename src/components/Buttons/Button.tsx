@@ -6,6 +6,8 @@ export interface ButtonProps extends MButtonProps {
    * Button contents
    */
   label: string;
+  icon?: React.ReactNode;
+  onClick: () => {};
 }
 
 /**
@@ -14,12 +16,14 @@ export interface ButtonProps extends MButtonProps {
 export const Button = ({
   color = "primary",
   label,
+  icon,
   ...props
 }: ButtonProps) => {
   return (
     <MButton
       variant="contained"
       color={color}
+      startIcon={icon}
       {...props}
     >
       {label}

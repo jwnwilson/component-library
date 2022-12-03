@@ -19,7 +19,7 @@ import { SidebarContainer } from './SidebarContainer';
 
 import { MenuItem, MenuHeader } from '../../components/MenuItem';
 
-export const Template: Story<sidebarProps> = (args) => (
+export const Example: Story<sidebarProps> = (args) => (
   <SidebarContainer>
     <Sidebar {...args} />
     <SidebarContent>
@@ -42,7 +42,6 @@ const Page = () => (
 );
 
 const icon = <InboxIcon></InboxIcon>;
-
 const menuItems = (
   <div>
     <MenuHeader label="Menu Header that is long" icon={<HomeIcon></HomeIcon>} link="/"></MenuHeader>
@@ -51,7 +50,6 @@ const menuItems = (
     <MenuItem label="Menu Item 3 that is long" icon={icon} link="/"></MenuItem>
   </div>
 )
-
 
 export default {
   title: 'Layout/Sidebar',
