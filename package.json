@@ -1,6 +1,6 @@
 {
   "name": "@jwnwilson/component-library",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "src/index.ts",
   "scripts": {
     "dev": "next dev",
