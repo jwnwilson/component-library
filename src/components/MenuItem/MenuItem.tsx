@@ -13,7 +13,7 @@ export interface MenuItemProps {
      */
     label: string;
     icon: React.ReactNode;
-    link: string;
+    link: string | object;
 }
 
 /**
