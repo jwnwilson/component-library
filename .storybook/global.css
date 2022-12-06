@@ -4,7 +4,4 @@ html, body {
 
 #root {
   height: 100%;
-  border: black;
-  border-style: solid;
-  border-width: 1px;
 }
