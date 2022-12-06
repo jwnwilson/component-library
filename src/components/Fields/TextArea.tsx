@@ -1,7 +1,7 @@
 import React from 'react';
-import { default as MTextField, StandardTextFieldProps } from '@mui/material/TextField';
+import { default as MTextField, BaseTextFieldProps } from '@mui/material/TextField';
 
-export interface TextAreaProps extends StandardTextFieldProps {
+export interface TextAreaProps extends BaseTextFieldProps {
     /**
      * Button contents
      */
@@ -10,7 +10,7 @@ export interface TextAreaProps extends StandardTextFieldProps {
     value: string;
     rows: number;
     maxRows: number;
-    onChange: () => {};
+    onChange: (value:any) => void;
 }
 
 /**

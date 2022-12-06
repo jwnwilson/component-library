@@ -1,5 +1,5 @@
 import React from 'react';
-import { default as MTextField, StandardTextFieldProps } from '@mui/material/TextField';
+import { default as MTextField, BaseTextFieldProps } from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 
 export interface Option {
@@ -7,7 +7,7 @@ export interface Option {
     value: string;
 }
 
-export interface SelectFieldProps extends StandardTextFieldProps {
+export interface SelectFieldProps extends BaseTextFieldProps {
     /**
      * Button contents
      */
@@ -15,7 +15,7 @@ export interface SelectFieldProps extends StandardTextFieldProps {
     name: string;
     value: string;
     choices: Array<Option>
-    onChange: () => {};
+    onChange: (value:any) => void;
 }
 
 /**
