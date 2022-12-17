@@ -7,7 +7,7 @@ export interface ButtonProps extends MButtonProps {
    */
   label: string;
   icon?: React.ReactNode;
-  onClick: () => {};
+  onClick: () => void;
 }
 
 /**

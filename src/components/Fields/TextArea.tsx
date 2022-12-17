@@ -8,7 +8,6 @@ export interface TextAreaProps extends BaseTextFieldProps {
     label: string;
     name: string;
     value: string;
-    rows: number;
     maxRows: number;
     onChange: (value:any) => void;
 }
@@ -23,21 +22,19 @@ export const TextArea = ({
     value,
     onChange,
     disabled,
-    rows = 2,
-    maxRows = Infinity,
+    maxRows = 2,
     ...props
 }: TextAreaProps) => {
     return (
         <MTextField
             type="text"
             multiline
-            rows={rows}
             maxRows={maxRows}
             variant={variant}
             label={label}
             name={name}
             onChange={value => onChange(value)}
-            value={value}
+            value={value ? value : ''}
             sx={{ width: '100%' }}
             disabled={disabled}
         />

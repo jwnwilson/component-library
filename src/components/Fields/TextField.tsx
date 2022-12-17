@@ -30,7 +30,7 @@ export const TextField = ({
             label={label}
             name={name}
             onChange={value => onChange(value)}
-            value={value}
+            value={value ? value : ''}
             sx={{ width: '100%' }}
             disabled={disabled}
         />
