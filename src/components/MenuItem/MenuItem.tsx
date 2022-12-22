@@ -15,6 +15,8 @@ export interface MenuItemProps {
     label: string;
     icon: React.ReactNode;
     link: string | object;
+    selected?: boolean;
+    onClick?: (event:any) => void;
 }
 
 /**
@@ -25,7 +27,10 @@ export const MenuItem = (props: MenuItemProps) => {
         <Tooltip title={props.label}>
             <ListItem className={styles.menuItem} disablePadding>
                 <Link href={props.link} passHref>
-                    <ListItemButton>
+                    <ListItemButton
+                        selected={props.selected ? false: true}
+                        onClick={props.onClick ? props.onClick: undefined}
+                    >
                         <ListItemIcon>
                             {props.icon}
                         </ListItemIcon>
