@@ -28,7 +28,7 @@ export const MenuItem = (props: MenuItemProps) => {
             <ListItem className={styles.menuItem} disablePadding>
                 <Link href={props.link} passHref>
                     <ListItemButton
-                        selected={props.selected ? false: true}
+                        selected={props.selected ? true: false}
                         onClick={props.onClick ? props.onClick: undefined}
                     >
                         <ListItemIcon>
